@@ -24,15 +24,17 @@ from behave import given, when, then
 def _given_input(context):
     context.stdin_data = context.text
 
+
 @when("the program runs")
 def _when_program_runs(context):
     context.result = subprocess.run(
         ["python", "-m", "calculator"],
         capture_output=True,
         check=True,
-        input=context.stdin_data.encode("utf-8")
+        input=context.stdin_data.encode("utf-8"),
     )
+
 
 @then("the output should be")
 def _then_output_should_be(context):
-    assert context.text == context.result.stdout.decode("utf-8"), f"Expected:\n {context.text}-*-\nObserved:\n{context.result.stdout.decode('utf-8')}"
+    assert context.text == context.result.stdout.decode("utf-8")
