@@ -1,0 +1,16 @@
+# Test artifacts files/directories.
+.coverage
+
+# Common virtual environments
+/.tox/
+/.venv/
+
+# PyPi build files/directories
+/build/
+/dist/
+/*.egg-info/
+/.eggs/
+
+# Other files to ignore.
+*.pyc
+debug.out
