@@ -22,6 +22,7 @@ class Calculator:
     """A helper for math novices."""
 
     def __init__(self):
+        """Initialize calculator object."""
         self.numbers = []
 
     def add_input(self, value):
@@ -29,6 +30,5 @@ class Calculator:
         self.numbers.append(value)
 
     def sum(self):
-        a = self.numbers.pop()
-        b = self.numbers.pop()
-        return a + b
+        """Sum two numbers."""
+        return self.numbers.pop() + self.numbers.pop()

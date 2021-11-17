@@ -15,7 +15,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this software.  If not, see <https://www.gnu.org/licenses/>.
 
-from behave import given, then, when
+"""Steps implementation for domain level feature."""
+
+
+from behave import given, then, when  # pylint: disable=import-error
 
 
 @given("the first number is {number:d}")
@@ -34,5 +37,5 @@ def _when_two_numbers_are_added(context):
 
 
 @then("the result should be {result:d}")
-def step_impl(context, result):
+def _then_result_should_be(context, result):
     assert context.result == result

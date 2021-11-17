@@ -15,29 +15,4 @@
 # You should have received a copy of the GNU General Public License
 # along with this software.  If not, see <https://www.gnu.org/licenses/>.
 
-"""Steps implementation for system level."""
-
-
-import subprocess
-
-from behave import given, then, when  # pylint: disable=import-error
-
-
-@given("the input is")
-def _given_input(context):
-    context.stdin_data = context.text
-
-
-@when("the program runs")
-def _when_program_runs(context):
-    context.result = subprocess.run(
-        ["python", "-m", "calculator"],
-        capture_output=True,
-        check=True,
-        input=context.stdin_data.encode("utf-8"),
-    )
-
-
-@then("the output should be")
-def _then_output_should_be(context):
-    assert context.text == context.result.stdout.decode("utf-8")
+"""Initialize calculator module."""
