@@ -30,7 +30,7 @@ Given the input is
 10
 9
 """
-When the program runs
+When the program "calculator" runs
 Then the output should be
 """
 X = 19
@@ -44,7 +44,7 @@ Given the input is
 -10
 4
 """
-When the program runs
+When the program "calculator" runs
 Then the output should be
 """
 X = -6
@@ -58,7 +58,7 @@ Given the input is
 15
 -7
 """
-When the program runs
+When the program "calculator" runs
 Then the output should be
 """
 X = 8

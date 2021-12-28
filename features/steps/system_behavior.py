@@ -28,10 +28,10 @@ def _given_input(context):
     context.stdin_data = context.text
 
 
-@when("the program runs")
-def _when_program_runs(context):
+@when('the program "{program}" runs')
+def _when_program_runs(context, program):
     context.result = subprocess.run(
-        ["python", "-m", "calculator"],
+        ["python", "-m", program],
         capture_output=True,
         check=True,
         input=context.stdin_data.encode("utf-8"),
