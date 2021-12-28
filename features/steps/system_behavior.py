@@ -20,7 +20,7 @@
 
 import subprocess
 
-from behave import given, then, when  # pylint: disable=import-error
+from behave import given, then, when  # pylint: disable=no-name-in-module
 
 
 @given("the input is")

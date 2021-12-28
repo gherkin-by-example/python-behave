@@ -18,7 +18,7 @@
 """Steps implementation for domain level feature."""
 
 
-from behave import given, then, when  # pylint: disable=import-error
+from behave import given, when  # pylint: disable=no-name-in-module
 
 
 @given("the first number is {number:d}")
