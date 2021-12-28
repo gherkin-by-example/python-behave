@@ -15,22 +15,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this software.  If not, see <https://www.gnu.org/licenses/>.
 
-"""Steps implementation for domain level feature."""
+"""Common steps implementation."""
+
+from behave import then
 
 
-from behave import given, then, when  # pylint: disable=import-error
-
-
-@given("the first number is {number:d}")
-def _given_first_number(context, number):
-    context.calculator.add_input(number)
-
-
-@given("the second number is {number:d}")
-def _given_second_number(context, number):
-    context.calculator.add_input(number)
-
-
-@when("the two numbers are added")
-def _when_two_numbers_are_added(context):
-    context.result = context.calculator.sum()
+@then("the result should be {result}")
+def _then_result_should_be(context, result):
+    assert str(context.result) == str(result), f"Mismatch: [{str(context.result)}] - [{str(result)}]"
