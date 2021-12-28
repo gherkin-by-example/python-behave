@@ -15,10 +15,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this software.  If not, see <https://www.gnu.org/licenses/>.
 
-from calculator.calculator import Calculator
+"""Behave environment setup."""
+
+from calculator.calculator import Calculator  # pylint: disable=import-error
 
 
 def before_scenario(context, scenario):
+    """Execute before each scenario."""
     tags = set(scenario.tags + scenario.feature.tags)
     if "domain" in tags:
         context.calculator = Calculator()
