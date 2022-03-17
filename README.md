@@ -53,6 +53,11 @@ $ python3 -m venv .venv
 $ . .venv/bin/activate
 $ pip install behave
 ```
+On some Python installations you could try:
+
+```
+$ python3 -m pip install behave
+```
 
 With everything in place you can run the whole test suite with:
 
