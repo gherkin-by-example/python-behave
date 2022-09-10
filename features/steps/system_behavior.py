@@ -34,10 +34,16 @@ def _when_program_runs(context, program):
         ["python", "-m", program],
         capture_output=True,
         check=True,
-        input=context.stdin_data.encode("utf-8"),
+        text=True,
+        input=context.stdin_data,
     )
 
 
 @then("the output should be")
 def _then_output_should_be(context):
-    assert context.text == context.result.stdout.decode("utf-8")
+    # Python's bytes.splitlines use the 'universal newlines' approach
+    # so that specific line break characters are not relevant, but a
+    # line break is.
+    expected = context.text.splitlines()
+    observed = context.result.stdout.splitlines()
+    assert expected == observed
